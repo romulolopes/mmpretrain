@@ -27,3 +27,5 @@ RUN conda clean --all \
     && git clone https://github.com/romulolopes/mmpretrain.git /mmpretrain \
     && cd /mmpretrain \
     && mim install --no-cache-dir -e .
+
+WORKDIR /mmpretrain
