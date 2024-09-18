@@ -16,5 +16,5 @@ __all__ = [
     'ClassNumCheckHook', 'PreciseBNHook', 'VisualizationHook',
     'SwitchRecipeHook', 'PrepareProtoBeforeValLoopHook',
     'SetAdaptiveMarginsHook', 'EMAHook', 'SimSiamHook', 'DenseCLHook',
-    'SwAVHook', 'WarmupParamHook'
+    'SwAVHook', 'WarmupParamHook' , 'MlflowLoggerHook'  
 ]
