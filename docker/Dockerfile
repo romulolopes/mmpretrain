@@ -22,8 +22,8 @@ RUN pip install openmim
 # Install Dagshub and mlflow
 RUN pip install dagshub mlflow 
 
-# Install MMPretrain
-RUN conda clean --all
-RUN git clone https://github.com/romulolopes/mmpretrain.git
-WORKDIR ./mmpretrain
-RUN mim install --no-cache-dir -e .
+# Install MMpretrain
+RUN conda clean --all \
+    && git clone https://github.com/romulolopes/mmpretrain.git /mmpretrain \
+    && cd /mmpretrain \
+    && mim install --no-cache-dir -e .
