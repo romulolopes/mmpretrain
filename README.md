@@ -1,3 +1,23 @@
+criar imagem
+
+`docker build -t mmpretrain .`
+
+`docker build`
+
+run container
+
+`sudo docker run --shm-size=16g --gpus all -it --name mmdetection -e  CUDA_VISIBLE_DEVICES=0 -e DAGSHUB_MLFLOW='https://dagshub.com/romulo.lopes/autokary2022.mlflow' -e DAGSHUB_USER='romulo.lopes' -e DAGSHUB_TOKEN='04fda3b7596e89120ffbefbc58acd1684c76e14a' -v /home/edson-cavalcanti/projetos/autokary2022/mmpretrain:/mmpretrain  -v /home/edson-cavalcanti/projetos/autokary2022/cariotipo:/mmdetection/data/cariotipo/ mmpretrain bash`
+
+
+Train
+
+`python tools/train.py configs/mask_rcnn/autokary2022.py `
+
+test
+
+`python tools/test.py configs/mask_rcnn/autokary2022.py work_dirs/autokary2022/epoch_12.pth`
+
+
 <div align="center">
 
 <img src="resources/mmpt-logo.png" width="600"/>
@@ -60,6 +80,9 @@ English | [简体中文](/README_zh-CN.md)
   <a href="https://www.zhihu.com/people/openmmlab" style="text-decoration:none;">
     <img src="https://user-images.githubusercontent.com/25839884/219026120-ba71e48b-6e94-4bd4-b4e9-b7d175b5e362.png" width="3%" alt="" /></a>
 </div>
+
+
+
 
 ## Introduction
 
