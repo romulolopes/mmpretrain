@@ -1,5 +1,5 @@
 _base_ = [
-  '../_base_/models/efficientnet_v2/efficientnetv2-b0_8xb32_in1k.py'
+  'efficientnetv2-b0_8xb32_in1k.py'
 ]
 
 load_from = "https://download.openmmlab.com/mmclassification/v0/efficientnetv2/efficientnetv2-b0_3rdparty_in1k_20221221-9ef6e736.pth"
