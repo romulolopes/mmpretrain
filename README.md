@@ -11,7 +11,7 @@ run container
 
 Train
 
-`python tools/train.py configs/mask_rcnn/autokary2022.py `
+`python tools/train.py configs/efficientnet_v2/cariotipo.py `
 
 test
 
