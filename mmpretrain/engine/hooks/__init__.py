@@ -10,6 +10,7 @@ from .swav_hook import SwAVHook
 from .switch_recipe_hook import SwitchRecipeHook
 from .visualization_hook import VisualizationHook
 from .warmup_param_hook import WarmupParamHook
+from .mlflow import MlflowLoggerHook
 
 __all__ = [
     'ClassNumCheckHook', 'PreciseBNHook', 'VisualizationHook',
