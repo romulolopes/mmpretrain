@@ -19,8 +19,11 @@ RUN apt-get update && apt-get install -y ffmpeg libsm6 libxext6 git ninja-build 
 # Install MIM
 RUN pip install openmim
 
+# Install Dagshub and mlflow
+RUN pip install dagshub mlflow 
+
 # Install MMPretrain
 RUN conda clean --all
-RUN git clone https://github.com/open-mmlab/mmpretrain.git
+RUN git clone https://github.com/romulolopes/mmpretrain.git
 WORKDIR ./mmpretrain
 RUN mim install --no-cache-dir -e .
