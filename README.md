@@ -6,7 +6,7 @@ criar imagem
 
 run container
 
-`sudo docker run --shm-size=16g --gpus all -it --name mmpretrain -e  CUDA_VISIBLE_DEVICES=0 -e DAGSHUB_MLFLOW='https://dagshub.com/romulo.lopes/autokary2022.mlflow' -e DAGSHUB_USER='romulo.lopes' -e DAGSHUB_TOKEN='04fda3b7596e89120ffbefbc58acd1684c76e14a' -v /home/edson-cavalcanti/projetos/autokary2022/mmpretrain:/mmpretrain  -v /home/edson-cavalcanti/projetos/autokary2022/cariotipo:/mmdetection/data/cariotipo/ mmpretrain bash`
+`sudo docker run --shm-size=16g --gpus all -it --name mmpretrain -e  CUDA_VISIBLE_DEVICES=0 -e DAGSHUB_MLFLOW='https://dagshub.com/romulo.lopes/autokary2022.mlflow' -e DAGSHUB_USER='romulo.lopes' -e DAGSHUB_TOKEN='04fda3b7596e89120ffbefbc58acd1684c76e14a' -v /home/edson-cavalcanti/projetos/autokary2022/mmpretrain:/mmpretrain  -v /home/edson-cavalcanti/projetos/autokary2022/cariotipo:/mmpretrain/data/cariotipo/ mmpretrain bash`
 
 
 Train
