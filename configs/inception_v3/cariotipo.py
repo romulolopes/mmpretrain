@@ -4,6 +4,7 @@ _base_ = [
 
 load_from = "https://download.openmmlab.com/mmclassification/v0/inception-v3/inception-v3_3rdparty_8xb32_in1k_20220615-dcd4d910.pth"
 
+'''
 num_classes = 2
 data_preprocessor = dict(
     num_classes=num_classes)
@@ -12,7 +13,7 @@ model = dict(
     head=dict(
         num_classes=num_classes,
     ))
-
+'''
 warmup_epochs = 10
 base_lr = 5e-4
 
