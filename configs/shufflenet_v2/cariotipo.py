@@ -46,7 +46,7 @@ param_scheduler = [
 
 data_root = 'data/cariotipo/'
 train_image_folder = "train"
-val_image_folder = "test" 
+val_image_folder = "valid" 
 IMAGENET_CATEGORIES = ["alterado", "normal"]
 METAINFO = {'classes': IMAGENET_CATEGORIES}
 
