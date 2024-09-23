@@ -12,7 +12,7 @@ model = dict(
     head=dict(
         num_classes=num_classes,
     ))
-warmup_epochs = 10
+warmup_epochs = 200
 base_lr = 5e-4
 
 optim_wrapper = dict(
@@ -70,7 +70,7 @@ val_evaluator = dict(type='Accuracy', topk=(1, ))
 test_evaluator = val_evaluator
 
 
-max_epochs = 30
+max_epochs = 200
 train_cfg = dict(by_epoch=True, max_epochs=max_epochs, val_interval=1)
 val_cfg = dict()
 test_cfg = dict()
