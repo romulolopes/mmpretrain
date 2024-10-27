@@ -273,6 +273,7 @@ class CustomDataset(BaseDataset):
         data_list = []
         for sample in samples:
             if self.with_label:
+                print(sample)
                 filename, gt_label = sample
                 img_path = backend.join_path(self.img_prefix, filename)
                 info = {'img_path': img_path, 'gt_label': int(gt_label)}
