@@ -52,6 +52,7 @@ IMAGENET_CATEGORIES = ["alterado", "normal"]
 METAINFO = {'classes': IMAGENET_CATEGORIES}
 
 train_dataloader = dict(
+    num_workers=2,
     dataset=dict(
         type='Cariotipo',
         metainfo=METAINFO,
@@ -61,6 +62,7 @@ train_dataloader = dict(
 )
 
 val_dataloader = dict(
+    num_workers=2,
     dataset=dict(
         type='Cariotipo',
         metainfo=METAINFO,
