@@ -12,11 +12,14 @@ load_from = "https://download.openmmlab.com/mmpretrain/v1.0/dinov2/vit-small-p14
 
 num_classes = 2
 data_preprocessor = dict(
-    num_classes=num_classes)
+    num_classes=num_classes,
+    _delete_=True
+    )
 
 model = dict(
     head=dict(
         num_classes=num_classes,
+        _delete_=True
     ))
 
 warmup_epochs = 10
