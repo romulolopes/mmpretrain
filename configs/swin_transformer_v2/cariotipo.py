@@ -53,6 +53,7 @@ METAINFO = {'classes': IMAGENET_CATEGORIES}
 
 train_dataloader = dict(
     dataset=dict(
+        type='Cariotipo',
         metainfo=METAINFO,
         data_root=data_root,
         data_prefix=train_image_folder
