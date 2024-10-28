@@ -62,6 +62,7 @@ train_dataloader = dict(
 
 val_dataloader = dict(
     dataset=dict(
+        type='Cariotipo',
         metainfo=METAINFO,
         data_root=data_root,
         data_prefix=val_image_folder
