@@ -1,5 +1,5 @@
 # dataset settings
-dataset_type = 'ImageNet21k'
+dataset_type = 'Cariotipo'
 data_preprocessor = dict(
     num_classes=21842,
     # RGB format normalization parameters
@@ -21,7 +21,7 @@ train_dataloader = dict(
     num_workers=5,
     dataset=dict(
         type=dataset_type,
-        data_root='data/imagenet21k',
+        data_root='data/cariotipo',
         split='train',
         pipeline=train_pipeline),
     sampler=dict(type='DefaultSampler', shuffle=True),
