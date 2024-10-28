@@ -1,7 +1,7 @@
 # dataset settings
-dataset_type = 'ImageNet'
+dataset_type = 'Cariotipo'
 data_preprocessor = dict(
-    num_classes=1000,
+    num_classes=2,
     # RGB format normalization parameters
     mean=[123.675, 116.28, 103.53],
     std=[58.395, 57.12, 57.375],
@@ -28,7 +28,7 @@ train_dataloader = dict(
     num_workers=5,
     dataset=dict(
         type=dataset_type,
-        data_root='data/imagenet',
+        data_root='data/cariotipo',
         split='train',
         pipeline=train_pipeline),
     sampler=dict(type='DefaultSampler', shuffle=True),
@@ -39,7 +39,7 @@ val_dataloader = dict(
     num_workers=5,
     dataset=dict(
         type=dataset_type,
-        data_root='data/imagenet',
+        data_root='data/cariotipo',
         split='val',
         pipeline=test_pipeline),
     sampler=dict(type='DefaultSampler', shuffle=False),
