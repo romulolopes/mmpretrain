@@ -77,13 +77,13 @@ val_dataloader = dict(
 )
 
 val_evaluator = dict(type='Accuracy', topk=(1, ))
-test_evaluator = val_evaluator
+#test_evaluator = val_evaluator
 
 
 max_epochs = 30
 train_cfg = dict(by_epoch=True, max_epochs=max_epochs, val_interval=1)
 val_cfg = dict()
-test_cfg = dict()
+#test_cfg = dict()
 
 # local path to saving the models and logs
 work_dir = "./out"
