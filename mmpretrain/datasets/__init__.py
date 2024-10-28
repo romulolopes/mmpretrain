@@ -24,7 +24,7 @@ from .stanfordcars import StanfordCars
 from .sun397 import SUN397
 from .transforms import *  # noqa: F401,F403
 from .voc import VOC
-
+from .cariotipo import Cariotipo
 __all__ = [
     'BaseDataset', 'CIFAR10', 'CIFAR100', 'CUB', 'Caltech101', 'CustomDataset',
     'DTD', 'FGVCAircraft', 'FashionMNIST', 'Flowers102', 'Food101', 'ImageNet',
