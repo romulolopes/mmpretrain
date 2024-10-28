@@ -74,7 +74,7 @@ val_evaluator = dict(type='Accuracy', topk=(1, ))
 max_epochs = 30
 train_cfg = dict(by_epoch=True, max_epochs=max_epochs, val_interval=1)
 val_cfg = dict()
-#test_cfg = dict()
+test_cfg = None # dict()
 
 # local path to saving the models and logs
 #work_dir = "./out"
