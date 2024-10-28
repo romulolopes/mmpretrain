@@ -15,5 +15,5 @@ model = dict(
 data_preprocessor = dict(num_classes=21841)
 
 _base_['train_pipeline'][1]['scale'] = 192  # RandomResizedCrop
-_base_['test_pipeline'][1]['scale'] = 219  # ResizeEdge
-_base_['test_pipeline'][2]['crop_size'] = 192  # CenterCrop
+#_base_['test_pipeline'][1]['scale'] = 219  # ResizeEdge
+#_base_['test_pipeline'][2]['crop_size'] = 192  # CenterCrop
