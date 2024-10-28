@@ -88,10 +88,10 @@ default_hooks = dict(
 )
 
 mlflow_tags = {
-        "model_type": "Mobilenet v3",
+        "model_type": "VGG",
         "dataset": "Cariotipo",
 }
 
 custom_hooks = [
-    dict(type='MlflowLoggerHook',  exp_name="Mobilenet v3" , params=mlflow_tags)
+    dict(type='MlflowLoggerHook',  exp_name="VGG" , params=mlflow_tags)
 ]
