@@ -1,15 +1,15 @@
-VGG
-ResNet
-ResNeXt
+- VGG
+- ResNet
+- ResNeXt
 SE-ResNet
 SE-ResNeXt
-RegNet
+- RegNet
 ShuffleNet V1
 ShuffleNet V2
 MobileNet V2
 MobileNet V3
-Swin-Transformer
-Swin-Transformer V2
+- Swin-Transformer
+- Swin-Transformer V2
 RepVGG
 Vision-Transformer
 Transformer-in-Transformer
@@ -20,9 +20,9 @@ DeiT-3
 Conformer
 T2T-ViT
 Twins
-EfficientNet
+- EfficientNet
 EdgeNeXt
-ConvNeXt
+- ConvNeXt
 HRNet
 VAN
 ConvMixer
