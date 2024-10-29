@@ -40,15 +40,15 @@ BEiT
 MixMIM
 EfficientNet V2
 RevViT
-ConvNeXt V2
+- ConvNeXt V2
 ViG
 XCiT
 LeViT
 RIFormer
 GLIP
 ViT SAM
-EVA02
-DINO V2
+- EVA02
+- DINO V2
  - HiViT [Problema ao treinar]
 
 
