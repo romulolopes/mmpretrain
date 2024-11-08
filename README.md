@@ -1,6 +1,6 @@
 - VGG
 - ResNet
-- ResNeXt
+- [ ] ResNeXt [Falta treinar]
 - SE-ResNet
 - SE-ResNeXt
 - RegNet
@@ -13,7 +13,7 @@
 - [x] RepVGG 
 - Vision-Transformer
 - Transformer-in-Transformer
-- Res2Net
+- [ ] Res2Net [Falta Treinar]
 - MLP-Mixer
 - DeiT
 - DeiT-3
@@ -29,7 +29,7 @@
 - CSPNet
 - PoolFormer
 - Inception V3
--[x] MobileOne
+- [x] MobileOne
 - EfficientFormer
 - MViT
 - HorNet
@@ -49,7 +49,7 @@
 - ViT SAM
 - EVA02
 - DINO V2
-- HiViT [Problema ao treinar]
+- [ ] HiViT [Problema ao treinar]
 
 
 criar imagem
