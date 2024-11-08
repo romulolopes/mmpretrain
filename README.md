@@ -10,7 +10,7 @@
 - MobileNet V3
 - Swin-Transformer
 - Swin-Transformer V2
-- RepVGG
+-[x] RepVGG 
 - Vision-Transformer
 - Transformer-in-Transformer
 - Res2Net
@@ -29,7 +29,7 @@
 - CSPNet
 - PoolFormer
 - Inception V3
-- MobileOne
+-[x] MobileOne
 - EfficientFormer
 - MViT
 - HorNet
