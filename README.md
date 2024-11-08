@@ -10,7 +10,7 @@
 - MobileNet V3
 - Swin-Transformer
 - Swin-Transformer V2
--[x] RepVGG 
+- [x] RepVGG 
 - Vision-Transformer
 - Transformer-in-Transformer
 - Res2Net
