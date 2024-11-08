@@ -1,55 +1,55 @@
 - VGG
 - ResNet
 - ResNeXt
-SE-ResNet
-SE-ResNeXt
+- SE-ResNet
+- SE-ResNeXt
 - RegNet
-ShuffleNet V1
-ShuffleNet V2
-MobileNet V2
-MobileNet V3
+- ShuffleNet V1
+- ShuffleNet V2
+- MobileNet V2
+- MobileNet V3
 - Swin-Transformer
 - Swin-Transformer V2
-RepVGG
-Vision-Transformer
-Transformer-in-Transformer
-Res2Net
-MLP-Mixer
-DeiT
-DeiT-3
-Conformer
-T2T-ViT
-Twins
+- RepVGG
+- Vision-Transformer
+- Transformer-in-Transformer
+- Res2Net
+- MLP-Mixer
+- DeiT
+- DeiT-3
+- Conformer
+- T2T-ViT
+- Twins
 - EfficientNet
-EdgeNeXt
+- EdgeNeXt
 - ConvNeXt
-HRNet
-VAN
-ConvMixer
-CSPNet
-PoolFormer
-Inception V3
-MobileOne
-EfficientFormer
-MViT
-HorNet
-MobileViT
-DaViT
-RepLKNet
-BEiT
-MixMIM
-EfficientNet V2
-RevViT
+- HRNet
+- VAN
+- ConvMixer
+- CSPNet
+- PoolFormer
+- Inception V3
+- MobileOne
+- EfficientFormer
+- MViT
+- HorNet
+- MobileViT
+- DaViT
+- RepLKNet
+- BEiT
+- MixMIM
+- EfficientNet V2
+- RevViT
 - ConvNeXt V2
-ViG
-XCiT
-LeViT
-RIFormer
-GLIP
-ViT SAM
+- ViG
+- XCiT
+- LeViT
+- RIFormer
+- GLIP
+- ViT SAM
 - EVA02
 - DINO V2
- - HiViT [Problema ao treinar]
+- HiViT [Problema ao treinar]
 
 
 criar imagem
