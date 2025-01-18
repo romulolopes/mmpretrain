@@ -76,7 +76,10 @@ val_dataloader = dict(
         )
 )
 
-val_evaluator = dict(type='Accuracy', topk=(1, ))
+val_evaluator = [
+    dict(type='Accuracy', topk=(1, )),
+    dict(type='SingleLabelMetric'),
+]
 #test_evaluator = val_evaluator
 
 

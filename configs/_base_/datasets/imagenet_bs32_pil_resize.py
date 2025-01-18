@@ -42,7 +42,10 @@ val_dataloader = dict(
         pipeline=test_pipeline),
     sampler=dict(type='DefaultSampler', shuffle=False),
 )
-val_evaluator = dict(type='Accuracy', topk=(1,))
+val_evaluator = [
+    dict(type='Accuracy', topk=(1, )),
+    dict(type='SingleLabelMetric'),
+]
 
 # If you want standard test, please manually configure the test dataset
 test_dataloader = val_dataloader
