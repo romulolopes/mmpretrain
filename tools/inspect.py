@@ -1,4 +1,12 @@
 import argparse
+import sys
+from pathlib import Path
+
+# Adicionar o diretório raiz do projeto ao sys.path
+project_root = Path(__file__).resolve().parents[1]  # Caminho do diretório "mmpretrain"
+sys.path.append(str(project_root))
+
+# Importar o módulo do projeto
 from mmpretrain import get_model
 
 def inspect_model(config_path, checkpoint_path):
