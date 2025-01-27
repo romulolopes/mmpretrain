@@ -4,8 +4,11 @@ ARG CUDNN="8"
 
 FROM pytorch/pytorch:${PYTORCH}-cuda${CUDA}-cudnn${CUDNN}-devel
 
-# fetch the key refer to https://forums.developer.nvidia.com/t/18-04-cuda-docker-image-is-broken/212892/9
-RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub 32
+# Set up Python version (Python 3.8)
+RUN conda install python=3.8 -y && conda clean --all
+
+# Fetch the key refer to https://forums.developer.nvidia.com/t/18-04-cuda-docker-image-is-broken/212892/9
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
 
 ENV TORCH_CUDA_ARCH_LIST="6.0 6.1 7.0+PTX"
@@ -23,8 +26,7 @@ RUN pip install openmim
 RUN pip install dagshub mlflow 
 
 # Install MMpretrain
-RUN conda clean --all \
-    && git clone https://github.com/romulolopes/mmpretrain.git /mmpretrain \
+RUN git clone https://github.com/romulolopes/mmpretrain.git /mmpretrain \
     && cd /mmpretrain \
     && mim install --no-cache-dir -e .
 
