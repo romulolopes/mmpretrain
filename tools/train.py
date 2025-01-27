@@ -1,27 +1,3 @@
-import inspect
-
-if not hasattr(inspect, 'cleandoc'):
-    def cleandoc(doc):
-        """Removes indentation from docstring."""
-        if doc is None:
-            return ""
-        lines = doc.expandtabs().splitlines()
-        margin = None
-        for line in lines[1:]:
-            content = line.lstrip()
-            if content:
-                indent = len(line) - len(content)
-                margin = min(margin, indent) if margin is not None else indent
-        if margin is not None and margin > 0:
-            lines[1:] = [line[margin:] for line in lines[1:]]
-        while lines and not lines[-1]:
-            lines.pop()
-        while lines and not lines[0]:
-            lines.pop(0)
-        return "\n".join(lines)
-    inspect.cleandoc = cleandoc
-
-
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
 import os
