@@ -32,15 +32,15 @@ def process_images(input_base_dir, output_base_dir, config_path, checkpoint_path
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Processar múltiplas imagens com vis_cam.py, preservando a estrutura de diretórios.")
-    parser.add_argument("input_base_dir", help="Diretório base com as imagens de entrada.")
-    parser.add_argument("output_base_dir", help="Diretório base onde os resultados serão salvos.")
-    parser.add_argument("config_path", help="Caminho para o arquivo de configuração.")
-    parser.add_argument("checkpoint_path", help="Caminho para o arquivo de checkpoint.")    
+    parser.add_argument("input_base_dir", help="Diretório base com as imagens de entrada.", default=None)
+    parser.add_argument("output_base_dir", help="Diretório base onde os resultados serão salvos.", default=None)
+    parser.add_argument("config_path", help="Caminho para o arquivo de configuração.", default=None)
+    parser.add_argument("checkpoint_path", help="Caminho para o arquivo de checkpoint.", default=None)    
     parser.add_argument("type", help="Tipo de imagens.")
 
     args = parser.parse_args()
 
-    if not all([args.input_base_dir, args.output_base_dir, args.config_path, args.checkpoint_path]):
+    if args.input_base_dir is None:
         dataset_type = str(args.type)
         input_base_dir = "data/cariotipo/test/"
 
