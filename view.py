@@ -35,8 +35,38 @@ if __name__ == "__main__":
     parser.add_argument("input_base_dir", help="Diretório base com as imagens de entrada.")
     parser.add_argument("output_base_dir", help="Diretório base onde os resultados serão salvos.")
     parser.add_argument("config_path", help="Caminho para o arquivo de configuração.")
-    parser.add_argument("checkpoint_path", help="Caminho para o arquivo de checkpoint.")
+    parser.add_argument("checkpoint_path", help="Caminho para o arquivo de checkpoint.")    
+    parser.add_argument("type", help="Tipo de imagens.")
 
     args = parser.parse_args()
 
-    process_images(args.input_base_dir, args.output_base_dir, args.config_path, args.checkpoint_path)
+    if not all([args.input_base_dir, args.output_base_dir, args.config_path, args.checkpoint_path]):
+        dataset_type = str(args.type)
+        input_base_dir = "data/cariotipo/test/"
+
+        algorithm = "efficientnet_v2"
+        config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
+        output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
+        checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_30.pth"
+        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path)
+        
+        algorithm = "mobileone"
+        config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
+        output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
+        checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_300.pth"
+        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path)
+    
+        algorithm = "hrnet"
+        config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
+        output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
+        checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_100.pth"
+        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path)
+    
+        algorithm = "repvgg"
+        config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
+        output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
+        checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_120.pth"
+        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path)
+    
+    else:    
+        process_images(args.input_base_dir, args.output_base_dir, args.config_path, args.checkpoint_path)
