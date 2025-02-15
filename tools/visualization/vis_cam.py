@@ -29,9 +29,16 @@ except ImportError:
                       '3rd party package pytorch_grad_cam.')
 
 # Alias name
-METHOD_MAP = {
+METHOD_MAP ={
     'gradcam++': cam.GradCAMPlusPlus,
+    'gradcam': cam.GradCAM,
+    'scorecam': cam.ScoreCAM,
+    'ablationcam': cam.AblationCAM,
+    'xgradcam': cam.XGradCAM,
+    'eigengradcam': cam.EigenGradCAM
 }
+
+
 METHOD_MAP.update({
     cam_class.__name__.lower(): cam_class
     for cam_class in cam.base_cam.BaseCAM.__subclasses__()
