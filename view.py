@@ -18,13 +18,22 @@ def process_images(input_base_dir, output_base_dir, config_path, checkpoint_path
                 input_path = os.path.join(root, filename)
                 output_path = os.path.join(output_dir, filename)
 
+                '''
                 # Comando para executar o script
                 command = [
                     "python3", "tools/visualization/vis_cam.py",
                     input_path, config_path, checkpoint_path,
                     "--save-path", output_path
                 ]
+                '''
 
+                # Comando para executar o script
+                command = [
+                    "python3", "tools/visualization/vis_cam.py",
+                    input_path, config_path, checkpoint_path,
+                    "--save-path", output_path,
+                    "--method" , "scorecam"
+                ]
                 print(f"Processando: {input_path} -> {output_path}")
                 subprocess.run(command, check=True)
 
