@@ -2,7 +2,7 @@ import os
 import subprocess
 import argparse
 
-def process_images(input_base_dir, output_base_dir, config_path, checkpoint_path):
+def process_images(input_base_dir, output_base_dir, config_path, checkpoint_path, method="scorecam"):
     # Itera sobre todos os subdiretórios no diretório base de entrada
     for root, dirs, files in os.walk(input_base_dir):
         # Calcula o caminho relativo para recriar a estrutura de diretórios no output
@@ -17,7 +17,7 @@ def process_images(input_base_dir, output_base_dir, config_path, checkpoint_path
             if filename.lower().endswith(('.jpg', '.jpeg', '.png')):  # Verifica extensões de imagem
                 input_path = os.path.join(root, filename)
                 output_path = os.path.join(output_dir, filename)
-
+                
                 '''
                 # Comando para executar o script
                 command = [
@@ -32,7 +32,7 @@ def process_images(input_base_dir, output_base_dir, config_path, checkpoint_path
                     "python3", "tools/visualization/vis_cam.py",
                     input_path, config_path, checkpoint_path,
                     "--save-path", output_path,
-                    "--method" , "scorecam"
+                    "--method" , method
                 ]
                 print(f"Processando: {input_path} -> {output_path}")
                 subprocess.run(command, check=True)
@@ -53,30 +53,31 @@ if __name__ == "__main__":
     if args.input_base_dir == "":
         dataset_type = str(args.type)
         input_base_dir = "data/cariotipo/test/"
+        method = "gradcam"
 
         algorithm = "efficientnet_v2"
         config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
         output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
         checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_30.pth"
-        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path)
+        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
         
         algorithm = "mobileone"
         config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
         output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
         checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_300.pth"
-        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path)
+        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
     
         algorithm = "hrnet"
         config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
         output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
         checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_100.pth"
-        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path)
+        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
     
         algorithm = "repvgg"
         config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
         output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
         checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_120.pth"
-        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path)
+        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
     
     else:    
         process_images(args.input_base_dir, args.output_base_dir, args.config_path, args.checkpoint_path)
