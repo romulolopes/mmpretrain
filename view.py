@@ -54,7 +54,14 @@ if __name__ == "__main__":
         dataset_type = str(args.type)
         input_base_dir = "data/cariotipo/test/"
         method = "gradcam"
-
+        '''
+        'gradcam++': cam.GradCAMPlusPlus,
+        'gradcam': cam.GradCAM,
+        'scorecam': cam.ScoreCAM,
+        'ablationcam': cam.AblationCAM,
+        'xgradcam': cam.XGradCAM,
+        'eigengradcam': cam.EigenGradCAM
+        '''
         algorithm = "efficientnet_v2"
         config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
         output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
