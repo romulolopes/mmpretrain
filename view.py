@@ -52,7 +52,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.input_base_dir == "":
-        for method in ['gradcam', 'scorecam', 'ablationcam' , 'xgradcam' , 'eigengradcam' , 'gradcam++']:
+        # 'ablationcam'
+        for method in ['gradcam', 'scorecam',  'xgradcam' , 'eigengradcam' , 'gradcam++']:
             for _type in ['normal', 'organizado']:
                 dataset_type = _type
                 input_base_dir = "data/cariotipo/test/"
