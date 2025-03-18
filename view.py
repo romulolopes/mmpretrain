@@ -38,7 +38,8 @@ def process_images(input_base_dir, output_base_dir, config_path, checkpoint_path
                 subprocess.run(command, check=True)
 
     print("Processamento concluído.")
-
+    
+# Chamada python view.py --type organizado
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Processar múltiplas imagens com vis_cam.py, preservando a estrutura de diretórios.")
     
@@ -51,40 +52,34 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.input_base_dir == "":
-        dataset_type = str(args.type)
-        input_base_dir = "data/cariotipo/test/"
-        method = "gradcam"
-        '''
-        'gradcam++': cam.GradCAMPlusPlus,
-        'gradcam': cam.GradCAM,
-        'scorecam': cam.ScoreCAM,
-        'ablationcam': cam.AblationCAM,
-        'xgradcam': cam.XGradCAM,
-        'eigengradcam': cam.EigenGradCAM
-        '''
-        algorithm = "efficientnet_v2"
-        config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
-        output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
-        checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_30.pth"
-        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
-        
-        algorithm = "mobileone"
-        config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
-        output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
-        checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_300.pth"
-        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
-    
-        algorithm = "hrnet"
-        config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
-        output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
-        checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_100.pth"
-        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
-    
-        algorithm = "repvgg"
-        config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
-        output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}/"
-        checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_120.pth"
-        process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
-    
+        for method in ['gradcam', 'scorecam', 'ablationcam' , 'xgradcam' , 'eigengradcam' , 'gradcam++']:
+            for _type in ['normal', 'organizado']:
+                dataset_type = _type
+                input_base_dir = "data/cariotipo/test/"
+                
+                algorithm = "efficientnet_v2"
+                config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
+                output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}_{method}/"
+                checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_30.pth"
+                process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
+                
+                algorithm = "mobileone"
+                config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
+                output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}_{method}/"
+                checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_300.pth"
+                process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
+            
+                algorithm = "hrnet"
+                config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
+                output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}_{method}/"
+                checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_100.pth"
+                process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
+            
+                algorithm = "repvgg"
+                config_path = f"work-dirs/{dataset_type}/{algorithm}/cariotipo.py"
+                output_base_dir = f"work-dirs/{dataset_type}/output_{algorithm}_{method}/"
+                checkpoint_path = f"work-dirs/{dataset_type}/{algorithm}/epoch_120.pth"
+                process_images(input_base_dir, output_base_dir, config_path, checkpoint_path,method)
+            
     else:    
         process_images(args.input_base_dir, args.output_base_dir, args.config_path, args.checkpoint_path)
