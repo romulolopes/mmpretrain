@@ -32,7 +32,9 @@ def process_images(input_base_dir, output_base_dir, config_path, checkpoint_path
                     "python3", "tools/visualization/vis_cam.py",
                     input_path, config_path, checkpoint_path,
                     "--save-path", output_path,
-                    "--method" , method
+                    "--method" , method,
+                    "--aug-smooth",
+                    "--eigen-smooth"
                 ]
                 print(f"Processando: {input_path} -> {output_path}")
                 subprocess.run(command, check=True)
